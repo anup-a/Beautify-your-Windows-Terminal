@@ -1,4 +1,7 @@
-# Beautify your Windows Terminal
+# Beautify your Windows Terminal 🦄
+
+The Windows Terminal is a modern, fast, efficient, powerful, and productive terminal application for users of command-line tools and shells like Command Prompt, PowerShell, and WSL. 
+
 ---
 ![terminal](./main.png)
 ---
@@ -13,6 +16,11 @@ Next Step is to modify Windows Terminal settings.
 Fire up your installed windows terminal, and open up its settings, which will open settings.json in your default editor.
  
  1. Under profiles list update the powershell profile to -
+ 
+ Properties - **name**-[ *Appears as title in top bar* ]
+ 	      **acrylicOpacity**-[ *its just the opacity of window* ]
+	      **useAcrylic**-[ *to use acrylicOpacity it must be true*]
+	      **icon**-[ *appears as favicon to window* ]
  ```
  {
        // Make changes here to the powershell.exe profile.
@@ -60,9 +68,17 @@ Fire up your installed windows terminal, and open up its settings, which will op
         }
     ],
  ```
+More themes at - [atomcorp.github.io/themes/](https://atomcorp.github.io/themes/)
+
 That's pretty much for the windows Terminal Settings , lets move to add some cool plugins 🔥.
 
-### PowerLine Setup
+---
+
+### PowerLine Setup ⚡
+![](./git1.png)
+
+
+![](./git2.png)
 
  Prerequisites - 
  - Install [Cascadia code PL](https://github.com/microsoft/cascadia-code/releases) font. (Otherwise you might some gibberish on your terminal )
@@ -72,8 +88,9 @@ That's pretty much for the windows Terminal Settings , lets move to add some coo
  Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
 ```
+---
 
-####  Customize your PowerShell prompt
+####  Customize your PowerShell prompt 🔨
  - Open your PowerShell profile with `notepad $PROFILE` or the text editor of your choice. This is not your Windows Terminal profile. Your PowerShell profile is a script that runs every time PowerShell starts.
  -  If your powershell doesn't already have a profile, create one -> 
  ```
@@ -85,14 +102,20 @@ Import-Module posh-git
 Import-Module oh-my-posh
 Set-Theme Paradox
 ```
+More themes at - [ oh-my-posh themes](https://github.com/JanDeDobbeleer/oh-my-posh#themes)
+
 ( ⚠️  if your powershell gives module not found error ) add the following code with default module location, to the top of your Powershell Profile.
 ```
 $env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)C:\Users\xxxx\Documents\WindowsPowerShell\Modules"
 ```
+Still facing error - Visit [https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7)
 
-### Modifying Oh-my-posh theme
+
+---
+### Modifying Oh-my-posh theme ( 🦄🔥🚀 Emojis )
 
 ![emojis](./emojis.png)
+
 ---
 Remember we set our default oh-my-posh theme to paradox, lets head over to customize it.
 
@@ -100,13 +123,16 @@ Remember we set our default oh-my-posh theme to paradox, lets head over to custo
 	- `Documents\WindowsPowerShell\Modules\oh-my-posh\2.0.412\Themes`
 
 - Open Paradox file, scroll down to the bottom and update following lines -
+
 ```
 $sl.PromptSymbols.StartSymbol = [char]::ConvertFromUtf32(0x01F984) + [char]::ConvertFromUtf32(0x0001F525) + ' '
 $sl.PromptSymbols.PromptIndicator = [char]::ConvertFromUtf32(0x01F680) +[char]::ConvertFromUtf32(0x276F)
 ```
 *(This lines will add cool emojis just before your StartSymbol & PromptIndicator)*
 
-### Adding custom banner to your Powershell
+---
+
+### Adding custom banner to your Powershell 🏳️‍🌈
 
 ![banner](./banner.png)
 This is quite tedious task if you want to add complex images in the banner.
@@ -134,3 +160,13 @@ Write-Color -Text " "
 ```
 
 *(Note - the number of colors you can choose from is somewhat limited: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, and White )*
+
+----
+
+## Credits
+
+- [Windows Terminal Community ❤](https://github.com/microsoft/terminal) 
+ - [https://github.com/JanDeDobbeleer/oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
+ - [https://github.com/dahlbyk/posh-git](https://github.com/dahlbyk/posh-git)
+ - [https://github.com/EvotecIT/PSWriteColor](https://github.com/EvotecIT/PSWriteColor)
+ - [https://github.com/atomcorp/themes](https://github.com/atomcorp/themes)
