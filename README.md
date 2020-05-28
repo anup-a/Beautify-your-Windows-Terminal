@@ -1,5 +1,7 @@
 # Beautify your Windows Terminal
 ---
+![terminal](./main.png)
+---
 Lets start with **windows Terminal** installation -
 
  -  Install the Windows Terminal from the Microsoft Store. This allows you to always be on the latest version when we release new builds with automatic upgrades.
@@ -90,6 +92,8 @@ $env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)C:\Us
 
 ### Modifying Oh-my-posh theme
 
+![emojis](./emojis.png)
+---
 Remember we set our default oh-my-posh theme to paradox, lets head over to customize it.
 
 - Navigate to your PSmodules directory, then into oh-my-posh themes directory 
@@ -104,6 +108,7 @@ $sl.PromptSymbols.PromptIndicator = [char]::ConvertFromUtf32(0x01F680) +[char]::
 
 ### Adding custom banner to your Powershell
 
+![banner](./banner.png)
 This is quite tedious task if you want to add complex images in the banner.
 ( There is easier way [Neofetch for windows](https://github.com/dylanaraps/neofetch), but it comes with its own lag overhead whenever you open your windows terminal )
 
